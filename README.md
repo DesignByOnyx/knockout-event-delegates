@@ -65,7 +65,7 @@ But now the browser has to manage a separate click event for every edit and remo
 
 - **No need to worry about $parent, $parents[n], or $root references.** If you have several levels of nested templates it can be combersome to remember how to reference a function or observable in a parent context.  With this plugin, binding events is as easy as styling your templates.  For example, lets say you have a template with two grids: `.grid-1` and `.grid-2` - both grids are composed of several levels of nested templates which will eventually render an "edit" button on each row.  Here's how you can use this plugin:
 
-```
+```html
 <!-- at the template root level -->
 <div data-bind="delegatedEvents: { '.grid-1 .edit click': handleGrid1Edit, 'grid-2 .edit click': handleGrid2Edit }">
     <div data-bind="template: {name: 'grid_1'}"></div>
