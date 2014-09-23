@@ -1,8 +1,19 @@
 knockout-event-delegates
 ========================
 
-Intelligent event binding for KnockoutJS.  The idea here is that all event information for a view is defined in one place: the root node of the template.  All events are bound using event delegation (extremely efficient) and are properly unbound whenever the node is removed.
+Intelligent event binding for KnockoutJS.  The idea here is that all event information for a view is defined in one place: the top-most node of the template.  All events are bound using event delegation (extremely efficient) and are properly unbound whenever the node is removed.
 
+##Syntax: 
+####`"[optional_css_selector ]event_name": handlerFunction`
+
+###Trimmed Examples:
+```html
+<div data-bind="delegatedEvents: { click: handleAllClicks }"><div>
+<div data-bind="delegatedEvents: { '.contentPane mouseenter': handleContentPaneMouseEnter }"><div>
+<div data-bind="delegatedEvents: { '.edit click': handleEditClicks, '.remove click': handleRemoveClicks }"><div>
+```
+
+###Full Example:
 ```html
 <div data-bind="delegatedEvents: { '.edit click': handleEditClicks, '.remove click': handleRemoveClicks }">
   <ul data-bind="foreach: people">
@@ -41,7 +52,7 @@ var PeopleViewModel = {
 ko.applyBindings(PeopleViewModel);
 ```
 
-Available events: **blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error contextmenu**.
+Available events: **blur focus focusin focusout resize click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup**.
 
 ##Benefits
 
