@@ -68,8 +68,8 @@ But now the browser has to manage a separate click event for every edit and remo
 ```html
 <!-- at the template root level -->
 <div data-bind="delegatedEvents: { '.grid-1 .edit click': handleGrid1Edit, 'grid-2 .edit click': handleGrid2Edit }">
-    <div data-bind="template: {name: 'grid_1'}"></div>
-    <div data-bind="template: {name: 'grid_2'}"></div>
+    <div class="grid-1" data-bind="template: {name: 'grid_1'}"></div>
+    <div class="grid-2" data-bind="template: {name: 'grid_2'}"></div>
 </div>
 
 <!-- or grid-level delegation -->
