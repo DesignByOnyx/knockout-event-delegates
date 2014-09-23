@@ -8,7 +8,7 @@ define([
             var disposeQueue = {},
                 $element = $(element),
                 events = ko.unwrap( valueAccessor() ),
-                eventsArray = "blur focus focusin focusout load resize scroll unload click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup error contextmenu".split(" "),
+                eventsArray = "blur focus focusin focusout resize click dblclick mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave change select submit keydown keypress keyup".split(" "),
                 eventRegex = new RegExp("(.*) ?(" + eventsArray.join("|") + ")$"),
                 matchedBinding, eventNamespace;
             
